@@ -1,0 +1,63 @@
+# tx_categories.yaml
+version: 1
+categories:
+  - name: cash_over_counter
+    label: 臨櫃或現金匯存款
+    priority: 10
+    direction: any
+    scope: any
+    patterns:
+      - "(臨櫃|現金|匯款|匯入|匯出|CD|提款|卡片(?:提|存)款|代收|交換票|放款|交票中心|轉帳|跨行)"
+    negatives:
+      - "(息|媒體|回饋|繳費|手續費.*(退|返))"
+  - name: PayPal
+    label: PayPal 相關
+    priority: 15
+    direction: any
+    scope: any
+    patterns:
+      - "(PP)"
+  - name: securities
+    label: 證券相關
+    priority: 20
+    direction: any
+    scope: any
+    patterns:
+      - "(集買|集賣|申購|券商|證券|證基|交割|融資|融券|ACH|股息|配息|股利|配股|除權|除息|買進|賣出|交易稅|股款)"
+  - name: salary
+    label: 工作收入相關
+    priority: 30
+    direction: D     # 多為入金
+    scope: any
+    patterns:
+      - "(薪|薪資|薪水|工資|代發|鐘點費|勞務費|稿費|獎金|分紅|報酬|收入|補助|津貼|旅費|差旅費|年終|不休假|子女教育|加班|禮金|貨款)"
+  - name: consumption
+    label: 消費相關
+    priority: 40
+    direction: any     # 多為出金
+    scope: any
+    patterns:
+      - "(刷卡|扣款|支付|超商|餐飲|電商|網購|交易|信用|卡費|消費|退|回饋|DB卡|一卡通|悠遊卡|卡款)"
+    negatives:
+      - "(稅)"
+  - name: loan
+    label: 貸款相關
+    priority: 50
+    direction: any
+    scope: any
+    patterns:
+      - "(貸款|房貸|信貸|車貸|本息|攤還|撥款|還款|借款|分期|循環|償還|還本)"
+  - name: interest
+    label: 利息
+    priority: 60
+    direction: D
+    scope: any
+    patterns:
+      - "(利息|利入|孳息|存款息)"
+  - name: other
+    label: 其他
+    priority: 9999
+    direction: any
+    scope: any
+    patterns:
+      - "(學費|人壽|產物|險|捐|繳|稅|罰款|賠償|保費|電話|水電|瓦斯|網路|有線電視|租金|房租|車租|停車|水費|電|網郵代)"
