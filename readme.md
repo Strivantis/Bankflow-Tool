@@ -58,13 +58,13 @@ bankflow/
 
 ```bash
 # 建立 Python 環境，Python 版本 3.11（穩定常用）
-conda create -n Py3.11 python=3.11 -y
+conda create -n <Name> python=3.11 -y
 
 # 啟用環境，下次你使用的時候，打開終端機後輸入這行即可
-conda activate Py3.11
+conda activate <Name>
 ```
 
-> 看到前面有 `(Py3.11)` 才是成功啟用。
+> 看到前面有 `(<Name>)` 才是成功啟用。
 
 
 ---
@@ -91,7 +91,7 @@ pip install pandas plotly openpyxl pyyaml nbformat
 ## 6) 在 VS Code 選對解譯器與 Kernel
 
 1. 用 VS Code 開啟專案資料夾 `bankflow/`。
-2. 開啟 `bankflow.ipynb` 時，右上角會顯示 **Kernel**。點一下，選擇 `Py3.11` 環境對應的 Kernel。
+2. 開啟 `bankflow.ipynb` 時，右上角會顯示 **Kernel**。點一下，選擇 `<Name>` 環境對應的 Kernel。
 
    * 第一次可能會問你「要不要為此環境建立 Jupyter Kernel」，按建立即可。
 
@@ -168,10 +168,10 @@ categories:
 ## 10) 常用 Conda 指令速查
 
 ```bash
-conda activate bankflow       # 啟用環境
+conda activate <Name>       # 啟用環境
 conda deactivate              # 關閉環境
 conda env list                # 列出所有環境
-conda remove -n bankflow --all -y   # 刪除整個環境
+conda remove -n <Name> --all -y   # 刪除整個環境
 ```
 
 ---
